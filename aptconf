@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "// Recommends are as of now still abused in many packages
+APT::Install-Recommends \"0\";
+APT::Install-Suggests \"0\";
+
+// Always keep stuff clean
+Apt::Get::Clean-Installed \"true\";
+Dselect::Clean \"always\";" | sudo tee /etc/apt/apt.conf
+
+echo "# Debian Multimedia
+deb http://debian-mirrors.sdinet.de/debian-multimedia testing main
+deb-src http://debian-mirrors.sdinet.de/debian-multimedia testing main
+
+deb http://debian-mirrors.sdinet.de/debian-multimedia unstable main
+deb-src http://debian-mirrors.sdinet.de/debian-multimedia unstable main
+
+# Official Debian armel
+deb http://http.debian.net/debian jessie main contrib non-free
+deb-src http://http.debian.net/debian jessie main contrib non-free
+
+deb http://http.debian.net/debian wheezy main contrib non-free
+deb-src http://http.debian.net/debian wheezy main contrib non-free" | sudo tee /etc/apt/sources.list

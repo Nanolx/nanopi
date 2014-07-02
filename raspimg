@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh pi@raspberry sudo dd if=/dev/mmcblk0 | gzip -c > raspberry.img.gz
