@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget http://admatec.de/sites/default/files/downloads/C-Berry.tar.gz
+tar xf C-Berry.tar.gz

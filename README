@@ -1,0 +1,17 @@
+nanopi
+===========================================================
+
+Scripts, configuration and other stuff for my
+raspberry pi.
+
+Contents:
++++++++++++++++++++++++++++++
+
+- admatectstuff:	download admatec C-Berry documents and examle programs 
+- aptconf:		script configuring apt and adding apt sources
+- bcm2835install:	install the driver for the admatec C-Berry (and other broadcom 2835 tft displays)
+- piconnect:		shortcut to quickly ssh-connect to my raspberry pi
+- purgex11:		shortcut to easily uninstall x11 to save space and resources
+- raspimg:		backup the raspberry pi debian to my computer
+- sethost:		change raspberry pi hostname (requires restart)
+- suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups

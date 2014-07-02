@@ -1,0 +1,9 @@
+#!/bin/bash
+
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.36.tar.gz
+tar xf bcm2835-1.36.tar.gz
+cd bcm2835-1.36
+./configure
+make
+sudo make check
+sudo make install
