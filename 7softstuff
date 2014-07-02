@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget http://www.7soft.de/uploads/Software/C-Berry-python.tgz
+tar xf C-Berry-python.tgz

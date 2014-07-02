@@ -6,6 +6,7 @@ Scripts, configuration and other stuff for my raspberry pi.
 Contents:
 +++++++++++++++++++++++++++++
 
+- 7softstuff:		python examples for the C-Berry tft display from 7soft
 - admatectstuff:	download admatec C-Berry documents and examle programs 
 - aptconf:		script configuring apt and adding apt sources
 - bcm2835install:	install the driver for the admatec C-Berry (and other broadcom 2835 tft displays)
