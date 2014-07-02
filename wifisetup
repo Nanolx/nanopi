@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "options 8192cu rtw_power_mgnt=0 rtw_enusbss=0" | \
-	sudo tee /etc/modprobe.d/8192cu.conf
+#echo "options 8192cu rtw_power_mgnt=0 rtw_enusbss=0" | \
+#	sudo tee /etc/modprobe.d/8192cu.conf
 
 echo -e "\n\n *** enter WiFi SSID (Network Name) *** \n"
 read WIFI_SSID
@@ -18,8 +18,11 @@ allow-hotplug wlan0
 iface wlan0 inet dhcp
 wpa-ap-scan 1
 wpa-scan-ssid 1
-wpa-ssid "${WIFI_SSID}"
-wpa-psk "${WIFI_PSK}" | \
+wpa-ssid \"${WIFI_SSID}\"
+wpa-psk \"${WIFI_PSK}\"" | \
 	sudo tee /etc/network/interfaces
+
+sudo cp /etc/ifplugd/action.d/ifupdown{,.orig}
+sudo cp /etc/wpa_supplicant/ifupdown.sh /etc/ifplugd/action.d/ifupdown
 
 sudo service networking restart
