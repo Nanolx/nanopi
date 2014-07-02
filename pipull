@@ -8,8 +8,8 @@ PI_USER=nano
 
 for arg in "${@}"; do
 	if [[ "${arg}" == */ ]]; then
-			scp -P ${PI_PORT} -r ${PI_USER}@${PI_ADDR}:"${1}" "${PWD}"
+			scp -P ${PI_PORT} -r ${PI_USER}@${PI_ADDR}:"${arg}" "${PWD}"
 	else
-		scp -P ${PI_PORT} ${PI_USER}@${PI_ADDR}:"${1}" "${PWD}"
+		scp -P ${PI_PORT} ${PI_USER}@${PI_ADDR}:"${arg}" "${PWD}"
 	fi
 done

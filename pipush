@@ -11,9 +11,9 @@ for arg in "${@}"; do
 		echo "${arg} does not exist!"
 	else
 		if [[ -f "${arg}" ]]; then
-			scp -P ${PI_PORT} "${1}" ${PI_USER}@${PI_ADDR}:/home/${PI_USER}/
+			scp -P ${PI_PORT} "${arg}" ${PI_USER}@${PI_ADDR}:/home/${PI_USER}/
 		elif [[ -d "${arg}" ]]; then
-			scp -P ${PI_PORT} -r "${1}" ${PI_USER}@${PI_ADDR}:/home/${PI_USER}/
+			scp -P ${PI_PORT} -r "${arg}" ${PI_USER}@${PI_ADDR}:/home/${PI_USER}/
 		fi
 	fi
 done
