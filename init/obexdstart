@@ -1,0 +1,3 @@
+#!/bin/bash
+
+obexpushd -B -o /public/bluetooth/
