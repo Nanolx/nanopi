@@ -17,5 +17,6 @@ Contents:
 - purgex11:		shortcut to easily uninstall x11 to save space and resources
 - raspimg:		backup the raspberry pi debian to my computer
 - sethost:		change raspberry pi hostname (requires restart)
-- suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups
+- suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups (only works on softfloat...)
+- wifisetup:		set modprobe options for edimax wifi usb adapter and setup wifi network
 - xinit:		additional, custom init script for raspberry pi (currently sets up bluez on start)
