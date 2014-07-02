@@ -16,3 +16,4 @@ Contents:
 - raspimg:		backup the raspberry pi debian to my computer
 - sethost:		change raspberry pi hostname (requires restart)
 - suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups
+- xinit:		additional, custom init script for raspberry pi (currently sets up bluez on start)

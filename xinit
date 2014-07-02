@@ -1,0 +1,30 @@
+#!/bin/bash
+
+INIT_DIRECTORY=/home/nano/init
+INIT_SERVICES=(obexdstart)
+KILL_SERVICES=(obexpushd)
+
+start_xinit () {
+	for service in ${INIT_SERVICES[@]}; do
+		sudo -u nano ${INIT_DIRECTORY}/${service}
+	done
+}
+
+stop_xinit () {
+	for service in ${KILL_SERVICES[@]}; do
+		killall ${service}
+	done
+}
+
+restart_xinit () {
+	stop_xinit
+	start_xinit
+}
+
+case $1 in
+	start) start_xinit ;;
+	stop) stop_xinit ;;
+	restart|force-reload) restart_xinit ;;
+	status) exit 0 ;;
+	*) echo "xinit {start|stop|restart}" ;;
+esac
