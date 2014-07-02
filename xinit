@@ -1,12 +1,13 @@
 #!/bin/bash
 
-INIT_DIRECTORY=/home/nano/init
+INIT_USER=nano
+INIT_DIRECTORY=/home/${INIT_USER}/init
 INIT_SERVICES=(obexdstart)
 KILL_SERVICES=(obexpushd)
 
 start_xinit () {
 	for service in ${INIT_SERVICES[@]}; do
-		sudo -u nano ${INIT_DIRECTORY}/${service}
+		sudo -u ${INIT_USER} ${INIT_DIRECTORY}/${service}
 	done
 }
 
