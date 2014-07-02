@@ -10,6 +10,7 @@ Contents:
 - aptconf:		script configuring apt and adding apt sources
 - bcm2835install:	install the driver for the admatec C-Berry (and other broadcom 2835 tft displays)
 - piconnect:		shortcut to quickly ssh-connect to my raspberry pi
+- piftp:		start an ssh-ftp session in $HOME of raspberry pi user
 - pipull:		grab files from raspberry pi using scp (into $PWD of computer user)
 - pipush:		push files to raspberry pi using scp (into $HOME of raspberry pi user)
 - purgex11:		shortcut to easily uninstall x11 to save space and resources
