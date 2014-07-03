@@ -10,6 +10,7 @@ Contents:
 - admatectstuff:	download admatec C-Berry documents and examle programs 
 - aptconf:		script configuring apt and adding apt sources
 - bcm2835install:	install the driver for the admatec C-Berry (and other broadcom 2835 tft displays)
+- display-stats.py:	display usage informations on tft display in über-fancy way
 - piconnect:		shortcut to quickly ssh-connect to my raspberry pi
 - piftp:		start an ssh-ftp session in $HOME of raspberry pi user
 - pipull:		grab files from raspberry pi using scp (into $PWD of computer user)
