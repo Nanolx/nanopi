@@ -17,6 +17,7 @@ Contents:
 - pipush:		push files to raspberry pi using scp (into $HOME of raspberry pi user)
 - purgex11:		shortcut to easily uninstall x11 to save space and resources
 - raspimg:		backup the raspberry pi debian to my computer
+- rfconn:		scan for bluetooth devices and pair with them
 - sethost:		change raspberry pi hostname (requires restart)
 - suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups (only works on softfloat...)
 - wifisetup:		set modprobe options for edimax wifi usb adapter and setup wifi network
