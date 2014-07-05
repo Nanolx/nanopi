@@ -1,20 +1,24 @@
-#!/bin/bash
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides: xinit
+# Required-Start: $remote_fs $syslog $bluetooth
+# Required-Stop: $remote_fs $syslog
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: custom stuff
+# Description: bluetooth / display-stats
+### END INIT INFO
 
-INIT_USER=nano
-INIT_DIRECTORY=/home/${INIT_USER}/init
-INIT_SERVICES=(obexdstart)
-KILL_SERVICES=(obexpushd)
+INIT_DIRECTORY=/etc/site-init
 
 start_xinit () {
-	for service in ${INIT_SERVICES[@]}; do
-		sudo -u ${INIT_USER} ${INIT_DIRECTORY}/${service}
-	done
+	${INIT_DIRECTORY}/obexdstart
+	${INIT_DIRECTORY}/displaystats
 }
 
 stop_xinit () {
-	for service in ${KILL_SERVICES[@]}; do
-		killall ${service}
-	done
+	killall obexpushd
+	killall displaystats
 }
 
 restart_xinit () {
