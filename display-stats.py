@@ -7,6 +7,7 @@ import sys
 import time
 import datetime
 import psutil
+import cbplib
 
 pygame.init()
 window = pygame.display.set_mode((320,240))
@@ -22,9 +23,9 @@ font5 = pygame.font.SysFont("droidsans", 22)
 font6 = pygame.font.SysFont("droidsans", 22)
 font7 = pygame.font.SysFont("droidsans", 22)
 
-os.system("tft_init")
-os.system("tft_clear")
-os.system("tft_pwm 80")
+cbplib.init()
+cbplib.clear()
+cbplib.backlight(80)
 
 while True:
 	try:
@@ -53,9 +54,11 @@ while True:
 		window.blit(label7, (10,200))
 		
 		pygame.image.save(window, "/ram/temp.bmp")        	
-		os.system("tft_bmp /ram/temp.bmp")
+		cbplib.image("/ram/temp.bmp")
         	time.sleep(1)
 		
 	except:
-                sys.exit()
+		cbplib.clear()
+		raise
+                sys.exit(1)
 
