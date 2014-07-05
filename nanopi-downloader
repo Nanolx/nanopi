@@ -8,7 +8,8 @@ echo "choose what to download/install:
 1	c-berry			official c-berry examples
 2	c-berry-python		7soft c-berry python examples
 3	c-berry-pthon-lib	pixelsetzer c-berry python lib
-4	suld			samsung unified linux driver"
+4	suld			samsung unified linux driver
+5	minidlna-fastscan	minidlna fork with fast rescan"
 
 read userchoise
 
@@ -47,6 +48,12 @@ case ${userchoise} in
 		sudo ./install.sh
 		sudo cp arm/* /usr/lib/cups/filter/
 		sudo /etc/init.d/cups restart
+	;;
+
+	5 | minidlna-fastscan )
+		git clone https://code.google.com/p/minidlna-fastscan/
+		cd minidlna-fastscan
+		./configure --prefix=/usr && make && sudo make install
 	;;
 
 	* )
