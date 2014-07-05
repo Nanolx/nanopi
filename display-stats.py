@@ -42,7 +42,7 @@ while True:
 		label4 = font4.render("CPU Time in Per cent: %s" % psutil.cpu_percent(), 1, (0,255,0))
 		label5 = font5.render("Disk: used %sM/%s%% / free %sM/%s%%" %(int(y[1] / 1000000), y[3], int(y[2] / 1000000), 100.0 - y[3]), 1, (255,140,0))
 		label6 = font6.render("Net Usage: sent %sK / recv %sK" %(z[0] / 1000, z[1] / 1000), 1, (0,255,255))
-		label7 = font7.render("Raspberry Pi Uptime: %s" % datetime.datetime.fromtimestamp(time.time() - psutil.boot_time()).strftime("%H:%M:%S"), 1, (255,0,255))
+		label7 = font7.render("Raspberry Pi Uptime: %s" % datetime.datetime.fromtimestamp(time.time() - psutil.boot_time() - 3600).strftime("%H:%M:%S"), 1, (255,0,255))
 
 		window.blit(label0, (0,0))
 		window.blit(label1, (10,50)) 
