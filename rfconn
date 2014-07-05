@@ -1,0 +1,20 @@
+#!/bin/bash
+
+hcitool scan
+
+echo -e "\nenter mac address of device to pair with: "
+read MAC
+
+echo -e "\nenter name of the device to pair with: "
+read NAME
+
+sudo bluez-simple-agent hci0 ${MAC}
+
+next_rfcomm=$(($(gawk '/rfcomm/{a=$1}END{print substr($1,7,1)}' < x)+1))
+
+echo "rfcomm${next_rfcomm} {
+	bind yes;
+	device ${MAC};
+	channel	1;
+	comment \"${NAME}\";
+}"
