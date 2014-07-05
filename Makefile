@@ -15,3 +15,4 @@ install-tools:
 	install -m755 sethost /usr/bin/
 	install -m755 aptconf /usr/bin/
 	install -m755 wifisetup /usr/bin/
+	install -m755 nanopi-downloader /usr/bin/

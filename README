@@ -6,11 +6,14 @@ Scripts, configuration and other stuff for my raspberry pi.
 Contents:
 +++++++++++++++++++++++++++++
 
-- 7softstuff:		python examples for the C-Berry tft display from 7soft
-- admatectstuff:	download admatec C-Berry documents and examle programs 
 - aptconf:		script configuring apt and adding apt sources
-- bcm2835install:	install the driver for the admatec C-Berry (and other broadcom 2835 tft displays)
 - display-stats.py:	display usage informations on tft display in über-fancy way
+- nanopi-downloader:	download various additional stuff for raspberry pi
+			x bcm2835 		(tft display module for broadcom 2835 and compatible)
+			x c-berry 		(official examples for the c-berry tft display)
+			x c-berry-python	(7soft python examples for the c-berry tft display)
+			x c-berry-python-lib	(pixelsetzer python lib for the c-berry tft display)
+			x suld			(samsung unified printer driver and cups setup)
 - piconnect:		shortcut to quickly ssh-connect to my raspberry pi
 - piftp:		start an ssh-ftp session in $HOME of raspberry pi user
 - pipull:		grab files from raspberry pi using scp (into $PWD of computer user)
@@ -19,6 +22,5 @@ Contents:
 - raspimg:		backup the raspberry pi debian to my computer
 - rfconn:		scan for bluetooth devices and pair with them
 - sethost:		change raspberry pi hostname (requires restart)
-- suldinstall:		install samsung unified linux driver for multifunction printers and set-up cups (only works on softfloat...)
 - wifisetup:		set modprobe options for edimax wifi usb adapter and setup wifi network
-- xinit:		additional, custom init script for raspberry pi (currently sets up bluez on start)
+- xinit:		additional, custom init script for raspberry pi (start obexpushd and display-stats.py)
