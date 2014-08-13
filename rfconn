@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bluetooth-agent 1337 &
+hciconfig hci0 piscan
 hcitool scan
 
 echo -e "\nenter mac address of device to pair with: "
@@ -8,13 +10,22 @@ read MAC
 echo -e "\nenter name of the device to pair with: "
 read NAME
 
-sudo bluez-simple-agent hci0 ${MAC}
+next_rfcomm=$(( $(gawk '$1~"rfcomm" {a=$1} END{print substr(a,7,1)} /etc/bluetooth/rfcomm.conf) +1 ))
 
-next_rfcomm=$(($(gawk '/rfcomm/{a=$1}END{print substr($1,7,1)}' < x)+1))
+bluez-simple-agent hci0 ${MAC}
 
-echo "rfcomm${next_rfcomm} {
+echo -e "\nDevices Transfer-Channel for obexpushd: "
+CHANN=$(sdptool browse ${MAC} | awk '/Service Name: OBEX File Transfer/{p[NR+7]=1} NR in p{print $2; delete p[NR]}')
+echo ${CHANN}
+
+echo "
+rfcomm${next_rfcomm} {
 	bind yes;
 	device ${MAC};
 	channel	1;
 	comment \"${NAME}\";
-}"
+	#obexpushd channel: ${CHANN}
+}" >> /etc/bluetooth/rfcomm.conf
+
+hciconfig hci0 noscan
+killall -qw bluetooth-agent
