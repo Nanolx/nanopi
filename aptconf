@@ -8,20 +8,27 @@ APT::Install-Suggests \"0\";
 Apt::Get::Clean-Installed \"true\";
 Dselect::Clean \"always\";" | sudo tee /etc/apt/apt.conf
 
-echo "# Debian Multimedia
-deb http://debian-mirrors.sdinet.de/debian-multimedia testing main
-deb-src http://debian-mirrors.sdinet.de/debian-multimedia testing main
+echo "# Debian Multimediadeb http://ftp.uni-kl.de/debian-multimedia/ unstable main 
+deb-src http://ftp.uni-kl.de/debian-multimedia/ unstable main 
 
-deb http://debian-mirrors.sdinet.de/debian-multimedia unstable main
-deb-src http://debian-mirrors.sdinet.de/debian-multimedia unstable main
+deb http://ftp.uni-kl.de/debian-multimedia/ testing main 
+deb-src http://ftp.uni-kl.de/debian-multimedia/ testing main
 
-# Official Debian armel
-deb http://http.debian.net/debian jessie main contrib non-free
-deb-src http://http.debian.net/debian jessie main contrib non-free
+# Official rPi
+deb http://mirrordirector.raspbian.org jessie main contrib non-free
+deb-src http://mirrordirector.raspbian.org jessie main contrib non-free
 
-deb http://http.debian.net/debian wheezy main contrib non-free
-deb-src http://http.debian.net/debian wheezy main contrib non-free" | sudo tee /etc/apt/sources.list
+# Official OSMC
+deb http://apt.osmc.tv jessie main
+deb-src http://apt.osmc.tv jessie main
+
+# Nanolx
+deb http://apt.nanolx.org/ photonic main
+deb-src http://apt.nanolx.org/ photonic main" | sudo tee /etc/apt/sources.list
 
 sudo apt-get update
 sudo apt-get -y --force-yes install deb-multimedia-keyring
+wget -q http://www.nanolx.org/apt/photonic.asc -O nanolx.key
+sudo apt-key add nanolx.key
+rm nanolx.key
 sudo apt-get update
