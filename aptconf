@@ -8,19 +8,18 @@ APT::Install-Suggests \"0\";
 Apt::Get::Clean-Installed \"true\";
 Dselect::Clean \"always\";" | sudo tee /etc/apt/apt.conf
 
-echo "# Debian Multimediadeb http://ftp.uni-kl.de/debian-multimedia/ unstable main 
-deb-src http://ftp.uni-kl.de/debian-multimedia/ unstable main 
+echo "# Debian Multimediadeb http://ftp.uni-kl.de/debian-multimedia/ unstable main
+deb-src http://ftp.uni-kl.de/debian-multimedia/ unstable main
 
-deb http://ftp.uni-kl.de/debian-multimedia/ testing main 
+deb http://ftp.uni-kl.de/debian-multimedia/ testing main
 deb-src http://ftp.uni-kl.de/debian-multimedia/ testing main
 
 # Official rPi
-deb http://mirrordirector.raspbian.org jessie main contrib non-free
-deb-src http://mirrordirector.raspbian.org jessie main contrib non-free
+deb http://archive.raspbian.org/raspbian jessie main contrib non-free firmware rpi
+deb-src http://archive.raspbian.org/raspbian jessie main contrib non-free firmware rpi
 
 # Official OSMC
 deb http://apt.osmc.tv jessie main
-deb-src http://apt.osmc.tv jessie main
 
 # Nanolx
 deb http://apt.nanolx.org/ photonic main
